@@ -1,0 +1,15 @@
+{
+  "name": "spotify_clone_backend",
+  "version": "1.0.0",
+  "description": "Creating nearly all the functionalities of spotify application",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Apurv Jha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
