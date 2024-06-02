@@ -10,6 +10,10 @@
   "author": "Apurv Jha",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1"
   }
 }
