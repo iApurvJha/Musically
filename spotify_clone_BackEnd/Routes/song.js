@@ -6,7 +6,7 @@ import songModel from "../Models/Song.js"
 const route = express.Router()
 
 
-route.post("/createSong",passport.authenticate("user"),async (req,res)=>{
+route.post("/createSong",passport.authenticate("jwt",{session:false}),async (req,res)=>{
     //req.user get's the user because of the passport.authencticate
     const {songName,thumbnail,track}=req.body
     if(!songName || !thumbnail || track){
