@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import User from "./Models/User.js"
 import  authRoute  from "./Routes/auth.js"
 import songRoute from "./Routes/song.js"
+import playlistRoute from "./Routes/playlist.js"
 import { Strategy as JwtStrategy,ExtractJwt } from "passport-jwt"
 import passport from "passport"
 
@@ -17,17 +18,37 @@ const opts={
     jwtFromRequest:ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey:"thisissecret",
 }
-passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-    User.findOne({ id: jwt_payload.sub }, (err, user) => {
-      if (err) {
-        return done(err, false);
-      }
+
+//Depricated the findOne does not accept a callback
+
+
+// passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
+//     User.findOne({ id: jwt_payload.sub }, (err, user) => {
+//       if (err) {
+//         return done(err, false);
+//       }
+//       if (user) {
+//         return done(null, user);
+//       } else {
+//         return done(null, false);
+//       }
+//     });
+// }));
+
+passport.use(new JwtStrategy(opts, async (jwt_payload, done) => {
+  try {
+      console.log("JWT Payload:", jwt_payload); 
+      const user = await User.findById(jwt_payload.identifier);
       if (user) {
-        return done(null, user);
+          return done(null, user);
       } else {
-        return done(null, false);
+          console.log("User not found"); 
+          return done(null, false);
       }
-    });
+  } catch (err) {
+      console.error("Error in JWT strategy:", err);
+      return done(err, false);
+  }
 }));
 
 
@@ -44,7 +65,8 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/auth",authRoute)
-app.use("/song",songRoute)
+app.use("/song",passport.authenticate("jwt",{session:false}),songRoute)
+app.use("/playlist",passport.authenticate("jwt",{session:false}),playlistRoute)
 
 
 app.listen(port,()=>{

@@ -26,4 +26,5 @@ const playlist=mongoose.Schema({
 
 const playlistModel=mongoose.model("Playlist",playlist)
 
-module.exports = userModel
+// module.exports = userModel
+export default  playlistModel
