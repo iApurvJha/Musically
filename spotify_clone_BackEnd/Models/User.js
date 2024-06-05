@@ -17,6 +17,10 @@ const user=mongoose.Schema({
         type:String,
         required:true
     },
+    password:{
+        type:String,
+        required:true
+    },
     likedSongs:{
         type:String,
         default:""
@@ -34,4 +38,5 @@ const user=mongoose.Schema({
 
 const userModel=mongoose.model("User",user)
 
-module.exports = userModel
+// module.exports = userModel
+export default userModel

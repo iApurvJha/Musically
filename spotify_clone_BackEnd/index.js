@@ -1,15 +1,21 @@
 import express from "express"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
+import User from "./Models/User.js"
+import  authRoute  from "./Routes/auth.js"
+import songRoute from "./Routes/song.js"
 import { Strategy as JwtStrategy,ExtractJwt } from "passport-jwt"
+import passport from "passport"
 
-dotenv.config()
+dotenv.config()      
 
 const app = express()
 const port = 3000
+app.use(express.json())
+
 const opts={
     jwtFromRequest:ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secret:"thisissecret",
+    secretOrKey:"thisissecret",
 }
 passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
     User.findOne({ id: jwt_payload.sub }, (err, user) => {
@@ -22,7 +28,7 @@ passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
         return done(null, false);
       }
     });
-  }));
+}));
 
 
 mongoose.connect(`mongodb+srv://apurvjha302:${process.env.PASSWORD}@cluster0.0y6fn19.mongodb.net/`)
@@ -36,6 +42,9 @@ mongoose.connect(`mongodb+srv://apurvjha302:${process.env.PASSWORD}@cluster0.0y6
 app.get("/",(req,res)=>{
     res.send("Hello World")
 })
+
+app.use("/auth",authRoute)
+app.use("/song",songRoute)
 
 
 app.listen(port,()=>{

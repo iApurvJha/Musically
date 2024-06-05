@@ -23,4 +23,5 @@ const song=mongoose.Schema({
 
 const songModel=mongoose.model("Song",song)
 
-module.exports = songModel
+// module.exports = songModel
+export default songModel
