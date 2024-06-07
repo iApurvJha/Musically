@@ -49,7 +49,7 @@ route.get("/name",async (req,res)=>{
     if (songs.length === 0) {
         return res.status(404).json({ error: "No songs found for the artist" });
     }
-    res.status(200).json(songs)
+    res.status(200).json(songs   )
 
 })
 
