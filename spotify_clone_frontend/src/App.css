@@ -5,9 +5,10 @@ body{
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: bold;
+  box-sizing: border-box;
 }
 
-
+/* *****************Login Css*********************************/
 
 .outerDivLogin{
   background: rgb(0,0,0);
@@ -79,5 +80,52 @@ hr{
   text-decoration: underline; 
 }
 .register{
+  color: white;
   margin-top: 2rem;
+}
+.register:hover{
+  color: #24e166;  
+  margin-top: 2rem;
+}
+
+
+
+/* ********************Sign Up CSS***********************************************/
+
+.outerDivSignUp{
+  background: rgb(0,0,0);
+  background: linear-gradient(360deg, rgba(0,0,0,1) 9%, rgba(78,75,75,1) 100%);
+  width: 98vw;
+  height: 125vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.signUpBox{
+    /* gap: 1.5rem; */
+    width: 50vw;
+    height: 125vh;
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    background-color: rgba(16, 16, 16, 0.905);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+
+}
+.loginLink{
+  text-decoration: underline;
+  color: white;
+}
+.loginLink:hover{
+  text-decoration: underline;
+  color: #24e166;
+}
+.registerHr{
+  margin-top: 2rem;
+  
 }

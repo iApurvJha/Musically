@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom';
 function Login(){
     return(
         <>
@@ -21,9 +22,10 @@ function Login(){
                         <p>Forgot your password?</p>
                     </div>
                     <hr></hr>
-                    <div className='register'>
-                        <p>Dont have an account? sign up for Spotify</p>
+                    <div >
+                        <Link className='register' to="/signup"><p>Dont have an account? sign up for Spotify</p></Link>
                     </div>
+                        
                 </div>
             </div>
         </>
