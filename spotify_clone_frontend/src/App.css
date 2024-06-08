@@ -1,4 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 body{
   margin: 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+}
+
+
+
+.outerDivLogin{
+  background: rgb(0,0,0);
+  background: linear-gradient(360deg, rgba(0,0,0,1) 9%, rgba(78,75,75,1) 100%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.loginBox{
+  /* gap: 1.5rem; */
+  width: 50vw;
+  height: 95vh;
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  background-color: rgba(16, 16, 16, 0.905);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.loginField{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+
+}
+.emailInput, .passwordInput{
+  height: 2rem;
+  width: 20rem;
+  background-color: black;
+  border: none;
+  border: 2px solid gray;
+  padding: 0.5rem;
+  color: white;
+}
+.emailInput:hover, .passwordInput:hover{
+  border: 2px solid white;
+}
+.loginButtonDiv{
+  height: 2.5rem;
+  width: 20rem;
+  background-color: #24e166;  
+  /* background-color: rgb(131, 255, 174); */
+  color: black;
+  border-radius: 50px;
+  border-top: 20px;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.loginButton{
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+}
+hr{
+  color: red;
+  width: 25rem;
+}
+.forgotPassword{
+  text-decoration: underline; 
+}
+.register{
+  margin-top: 2rem;
 }
