@@ -39,7 +39,7 @@ route.post("/register",async (req,res)=>{
 
 //step1 take data from user
 route.post("/login",async (req,res)=>{
-    const {email,password,firstName,lastName,username}=req.body
+    const {email,password}=req.body
 
     //step 2 check whether the email is registered or not
     let user = await User.findOne({email:email})
