@@ -136,14 +136,16 @@ hr{
 .homeOuterDiv{
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   flex-direction: row;
+  background: rgb(0,0,0);
+  background: linear-gradient(360deg, rgb(24, 24, 24) 9%, rgb(43, 40, 40) 100%);
   /* background-color: blue; */
 }
 .sideBar{
   display: flex;
   width: 20vw;
-  height: 100vh;
+  height: 150vh;
   flex-direction: column;
   /* background-color: rgb(19, 19, 19); */
   background: linear-gradient(360deg, rgb(24, 24, 24) 9%, rgb(43, 40, 40) 100%);
@@ -222,3 +224,49 @@ hr{
   text-align: center;
   font: inherit;
 }
+
+.cursorPointer{
+  cursor: pointer;
+}
+
+
+/* ******************************Upload Songs Css************************************************* */
+
+.uploadSongBackground{
+  background: rgb(0,0,0);
+  background: linear-gradient(360deg, rgb(24, 24, 24) 9%, rgb(43, 40, 40) 100%);
+  /* background: linear-gradient(360deg, rgb(68, 67, 67) 9%, rgb(21, 18, 18) 100%); */
+  height: 140vh;
+  width: 80vw;
+}
+.uploadSongHeading{
+  font-size: xx-large;
+  padding: 2rem;
+}
+.uploadSongInput{
+  display: flex;
+  justify-content: start;
+  font-size: small;
+  gap: 5rem;
+  padding: 2em;
+}
+
+
+/* ******************************cloudinary button widget************************ */
+.cloudinartWidgetButton{
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: larger;
+  font-weight: bold;
+  height: 2.5rem;
+  width: 9rem;
+  background-color: white;
+  color: black;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 2rem;
+}
+
+
