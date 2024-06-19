@@ -1,7 +1,9 @@
 import React from 'react'
 import { Icon } from '@iconify/react';
+import { useNavigate } from 'react-router-dom';
 
 function SideBar(props) {
+    const navigate=useNavigate()
     return (    
         <div className='sideBar'>
 
@@ -24,7 +26,10 @@ function SideBar(props) {
                     <Icon icon="fluent:library-28-regular" width="3rem" height="2rem"  style={{color: "white"}} />
                     <p>Your Library</p>
                 </div>
-                {props.isAuthenticated?<div className='createPlaylist'>
+                {props.isAuthenticated?<div onClick={(()=>{
+                    navigate("/mymusic")
+
+                })} className='createPlaylist'>
                     <Icon icon="tabler:music" width="3rem" height="2rem"  style={{color: "white"}} />
                     <p>My music</p>
                 </div>:""}

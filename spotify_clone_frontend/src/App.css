@@ -269,4 +269,58 @@ hr{
   margin: 2rem;
 }
 
+/* ****************************MyMusic Css****************************************** */
+.myMusicHeading{
+  font-size: xx-large;
+  padding: 2rem;
+}
+.songDetail{
+  display: flex;
+  justify-content: space-between;
+  /* padding: 2rem; */
+  align-items: center;
+  /* gap: 15rem; */
 
+}
+.songThumbnailAndName{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.artistAndSongName{
+  display: flex;
+  font-size: small;
+  font-weight: 200;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  cursor: pointer;
+
+}
+.artistAndSongName:hover{
+  text-decoration: underline;
+
+
+}
+.songName{
+  font-weight: 700;
+}
+.thumbnailImg{
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+}
+.myMusicWrapper {
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  height: 9vh;
+
+}
+
+.myMusicWrapper:hover {
+  background-color: gray;
+  opacity: 0.5;
+  border: 2px solid transparent;
+}

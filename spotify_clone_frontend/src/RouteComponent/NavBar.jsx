@@ -13,7 +13,9 @@ function NavBar(props) {
           navigate("/uploadsongs")
 
         })} className='cursorPointer'>{props.isAuthenticated?"Upload Songs":""}</span>
-        <span className='homeLoginSpan'><button className='homeLoginButton' >Log In</button></span>
+        <span onClick={(()=>{
+          navigate("/login")
+        })} className='homeLoginSpan'><button className='homeLoginButton' >Log In</button></span>
     </div>
   )
 }
