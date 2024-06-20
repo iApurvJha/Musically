@@ -30,7 +30,7 @@ function UploadSongs(props) {
     if(songDetail && !songDetail.error){
       console.log(songDetail)
       alert("sucess")
-      navigate("/home")
+      navigate("/mymusic")
 
     }
     else{

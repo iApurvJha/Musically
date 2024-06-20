@@ -41,10 +41,34 @@ export const AuthenticatedPostRequest= (route,body,token)=>{
     })
     .catch((error) => {
         console.error('Fetch error:', error);
-        throw error; // Re-throw the error to propagate it
+        throw error; 
     });
 
 }
+export const unAuthenticatedGetRequest = (route,token)=>{
+    const url=defaultUrl+route
+    return fetch(url,{
+        method:"GET",
+        headers:{
+            "content-type":"application/json",
+            "Authorization":`Bearer ${token}`
+        }
+    })
+    .then((res)=>{
+        return res.json()
+    })
+    .then((data)=>{
+        return data
+    })
+    .catch((err)=>{
+        console.log(`i am fetch error from frontEnd ${err}`)
+        throw err
+    })
+
+    
+}
+
+
 
 // const getCookie = (name) => {
 //     const nameEQ = name + "=";

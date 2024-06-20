@@ -21,7 +21,7 @@ route.post("/create",async (req,res)=>{
 
 route.get("/all-mySongs",async (req,res)=>{
     const currentUser = req.user
-    const songs = await songModel.find({artist:currentUser._id})
+    const songs = await songModel.find({artist:currentUser._id}).populate('artist');;
     res.status(200).json({data:songs})
 })
 

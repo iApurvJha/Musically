@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../App.css'
 import { cloudinary_preset } from "../preset";
 
@@ -15,6 +16,7 @@ class CloudinaryUploadWidget extends Component {
           console.log("Done! Here is the song info: ", result.info);
           this.props.setTrack(result.info.secure_url);
           this.props.setFilename(result.info.original_filename)
+
           
 
         }
@@ -39,3 +41,6 @@ class CloudinaryUploadWidget extends Component {
 }
 
 export default CloudinaryUploadWidget;
+
+
+
