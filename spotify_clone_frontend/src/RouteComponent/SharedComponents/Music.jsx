@@ -18,7 +18,7 @@ function Music(props) {
                     </div>
                 </div>
                 <div className='duration'>
-                    3:55
+                    {/* 3:55 */}
                 </div>
             </div>
         </div>

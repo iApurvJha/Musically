@@ -9,10 +9,20 @@ import {useCookies} from 'react-cookie'
 function Mymusic(props) {
     const [songData,setSongData]=useState([])
     const [cookie,setCookie]= useCookies(["token"])
+
+    // const playSong=(songSrc)=>{
+    //     var sound = new Howl({
+    //         src: [songSrc],
+    //         html5: true
+    //       });
+          
+    //       sound.play();
+    // }
     useEffect((()=>{
         const getSong=async ()=>{
             const response = await unAuthenticatedGetRequest("/song/all-mySongs",cookie.token)
             console.log(response.data)
+            console.log("hello")
             // console.log(typeof(response.data))
             console.log(Array.isArray(response.data));
             setSongData(response.data)
@@ -35,6 +45,7 @@ function Mymusic(props) {
             </div>
 
         </div>
+
   )
 }
 

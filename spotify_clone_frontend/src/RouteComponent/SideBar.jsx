@@ -1,6 +1,6 @@
-import React from 'react'
 import { Icon } from '@iconify/react';
 import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function SideBar(props) {
     const navigate=useNavigate()
@@ -27,6 +27,7 @@ function SideBar(props) {
                     <p>Your Library</p>
                 </div>
                 {props.isAuthenticated?<div onClick={(()=>{
+                    console.log("hello")
                     navigate("/mymusic")
 
                 })} className='createPlaylist'>

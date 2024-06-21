@@ -12,6 +12,7 @@
   "dependencies": {
     "@iconify-icons/mdi": "^1.2.48",
     "@iconify/react": "^5.0.1",
+    "howler": "^2.2.4",
     "react": "^18.2.0",
     "react-cookie": "^7.1.4",
     "react-dom": "^18.2.0",
