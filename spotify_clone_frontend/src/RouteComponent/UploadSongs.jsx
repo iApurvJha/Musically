@@ -42,11 +42,8 @@ function UploadSongs(props) {
   }
 
   return (
-    <div className='homeOuterDiv'>
-            <SideBar isAuthenticated={props.isAuthenticated} />
-            <div className='remainingScreen'>
-                <NavBar isAuthenticated={props.isAuthenticated} />
-                <div className='uploadSongBackground'>
+    <>
+           <div className='uploadSongBackground'>
                   <div className='uploadSongHeading'>
                     Upload your songs
                   </div>
@@ -62,15 +59,8 @@ function UploadSongs(props) {
                   <div onClick={createSong} className='loginButtonDiv'>
                     <button  className='loginButton'>Upload Song</button>
                   </div>
-                </div>
-                
-                
-            
-              
-              </div>
-
-      </div>
-   
+            </div>
+    </>   
   )
 }
 

@@ -1,9 +1,18 @@
 import React from 'react'
+import { useContext } from 'react'
+import songContext from '../../Context/SongContext'
 
 function Music(props) {
+    // const val = useContext(songContext)
+    // console.log(val)
+    const {currSong,setCurrSong} = useContext(songContext)
+
   return (
     <>
-        <div className='myMusicWrapper'>
+        <div className='myMusicWrapper' onClick={()=>{
+            setCurrSong(props)
+            // console.log("Done")
+        }}>
                     
             <div className='songDetail ' >
                 <div className='songThumbnailAndName'>

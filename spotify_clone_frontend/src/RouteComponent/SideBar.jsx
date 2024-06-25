@@ -16,23 +16,32 @@ function SideBar(props) {
             <div className='userUtilities'>
                 <div className='createPlaylist'>
                     <Icon icon="majesticons:home-line" width="3rem" height="2rem" style={{ color: "white" }}/>
-                    <p>Home</p>
+                    <p>
+                        <NavLink 
+                            className="removeLinkStyle"  
+                            to="/"
+                            style={({isActive})=>{
+                                color:isActive?"red":"blue"
+                            }}
+                            end
+                            
+                        >
+                            Home
+                        </NavLink>
+                    </p>
                 </div>
                 <div className='createPlaylist'>
                     <Icon icon="iconamoon:search" width="3rem" height="2rem"  style={{color: "white"}} />
-                    <p>Search</p>
+                    <p><NavLink className="removeLinkStyle" to="/search">Search</NavLink></p>
                 </div>
                 <div className='createPlaylist'>
                     <Icon icon="fluent:library-28-regular" width="3rem" height="2rem"  style={{color: "white"}} />
                     <p>Your Library</p>
                 </div>
-                {props.isAuthenticated?<div onClick={(()=>{
-                    console.log("hello")
-                    navigate("/mymusic")
-
-                })} className='createPlaylist'>
+                {props.isAuthenticated?<div
+                     className='createPlaylist'>
                     <Icon icon="tabler:music" width="3rem" height="2rem"  style={{color: "white"}} />
-                    <p>My music</p>
+                    <p><NavLink className="removeLinkStyle" to="/mymusic">My music</NavLink></p>
                 </div>:""}
             </div>
                 
@@ -52,7 +61,7 @@ function SideBar(props) {
             {/* Footer */}
 
             <footer className='footer'>
-                <p className='padding'>Logged inLegal</p>
+                <p className='padding'>Legal</p>
                 <p className='padding'>Privacy</p>
                 <p className='padding'>Privacy Center</p>
                 <p className='padding'>Privacy Policy</p>

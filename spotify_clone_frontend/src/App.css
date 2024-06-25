@@ -10,7 +10,7 @@ body{
   color: white;
 }
 body::-webkit-scrollbar{
-  display: none;
+  displayInput: none;
 }
 
 /* *****************Login Css*********************************/
@@ -354,10 +354,70 @@ hr{
   width: 81vw;
   background-color: inherit;
   justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 50;
 }
 
 .homeRemainingScreen{
   display: flex;
   flex-direction: column;
+  
   /* justify-content: space-evenly; */
+}
+
+
+.playSong{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+}
+
+.playSong > *:hover{
+  color: white;
+}
+
+/* *****************************NavLink CSS**********************************/
+
+.removeLinkStyle{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ************************************Search CSS**********************************/
+
+.searchOuterDiv{
+  display: flex;
+  padding: 2rem;
+  justify-content: start;
+  align-items: center;
+}
+.searchInnerDiv{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 2rem;
+  width: 30rem;
+  background-color: black;
+  border: none;
+  border: 2px solid gray;
+  padding: 0.5rem;
+  color: white;
+}
+.searchInput{
+  height: 2rem;
+  width: 30rem;
+  background-color: black;
+  border: none;
+  padding: 0.5rem;
+  color: white;
+}
+.searchInput:focus{
+  border: 2px solid black;
+  outline: none;
+  width: auto; /* Reset width to auto (if size is being controlled elsewhere) */
+  height: auto; /* Reset height to auto (if size is being controlled elsewhere) */
 }
