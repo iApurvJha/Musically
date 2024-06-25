@@ -11,6 +11,7 @@ import Search from './RouteComponent/Search';
 import {BrowserRouter,Routes,Route,Navigate} from "react-router-dom"
 import { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
+import Modal from './Modal/Modal.jsx';
 
 
 
@@ -34,7 +35,7 @@ function App() {
     <BrowserRouter>
       {isAuthenticated?(
         <songContext.Provider value={{currSong,setCurrSong}}>
-        <MusicWrapper isAuthenticated={isAuthenticated}>
+        <MusicWrapper  isAuthenticated={isAuthenticated}>
           <Routes>
               <Route path='/' element={<LoggedInHome isAuthenticated={isAuthenticated} ></LoggedInHome>}/>
               <Route path='/uploadsongs' element={<UploadSongs isAuthenticated={isAuthenticated} />}/>

@@ -30,10 +30,12 @@ function SideBar(props) {
                         </NavLink>
                     </p>
                 </div>
-                <div className='createPlaylist'>
+                <NavLink className="removeLinkStyle" to="/search">
+                    <div className='createPlaylist'>
                     <Icon icon="iconamoon:search" width="3rem" height="2rem"  style={{color: "white"}} />
-                    <p><NavLink className="removeLinkStyle" to="/search">Search</NavLink></p>
-                </div>
+                    <p>Search</p>
+                    </div>
+                </NavLink>
                 <div className='createPlaylist'>
                     <Icon icon="fluent:library-28-regular" width="3rem" height="2rem"  style={{color: "white"}} />
                     <p>Your Library</p>
@@ -42,14 +44,16 @@ function SideBar(props) {
                      className='createPlaylist'>
                     <Icon icon="tabler:music" width="3rem" height="2rem"  style={{color: "white"}} />
                     <p><NavLink className="removeLinkStyle" to="/mymusic">My music</NavLink></p>
-                </div>:""}
+                </div>:"hell"}
             </div>
                 
          {/* User playlist and like songs section     */}
-            <div className='userSongs'>
+            <div onClick={()=>{
+                        props.setModal(true)
+                    }} className='userSongs'>
                 <div className='createPlaylist'>
                     <Icon icon="bi:plus-square" width="3rem" height="2rem"  style={{color: "white"}} />
-                    <p>Create Playlist</p>
+                    <p >Create Playlist</p>
                 </div>
                 <div className='createPlaylist '>
                     <Icon icon="mdi:heart-box" width="3rem" height="3rem"  style={{color: "red"}} />
