@@ -391,6 +391,8 @@ hr{
 
 .searchOuterDiv{
   display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
   padding: 2rem;
   justify-content: start;
   align-items: center;
@@ -420,4 +422,9 @@ hr{
   outline: none;
   width: auto; /* Reset width to auto (if size is being controlled elsewhere) */
   height: auto; /* Reset height to auto (if size is being controlled elsewhere) */
+}
+
+.response{
+  display: flex;
+  flex-direction: column;
 }

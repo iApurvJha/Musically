@@ -37,21 +37,49 @@ route.get("/artist/:artistId",async (req,res)=>{
 
 })
 
-//Route to get song by songName
+// Route to get song by songName
 
 route.get("/name",async (req,res)=>{
     const songName = req.query.songName
+    console.log(`songname form backend ${songName}`)
     if(!songName){
-        res.status(400).json({"error":"Insuficient data to search"})
+        return res.status(400).json({"error":"Insuficient data to search"})
     }
 
-    const songs = await songModel.find({songName:songName})
+    const songs = await songModel.find({songName:songName}).populate("artist")
     if (songs.length === 0) {
         return res.status(404).json({ error: "No songs found for the artist" });
     }
-    res.status(200).json(songs   )
+    return res.status(200).json(songs   )
 
 })
+
+// route.get("/name", async (req, res) => {
+//     const songName = req.query.songName;
+
+//     // Check if songName is provided
+//     if (!songName) {
+//         return res.status(400).json({ "error": "Insufficient data to search" });
+//     }
+
+//     try {
+//         // Query the database for songs with the given songName
+//         const songs = await songModel.find({ songName: songName });
+
+//         // Check if songs were found
+//         if (songs.length === 0) {
+//             return res.status(404).json({ error: "No songs found for the given song name" });
+//         }
+
+//         // Respond with the found songs
+//         res.status(200).json(songs);
+//     } catch (error) {
+//         // Handle any errors that occur during database query
+//         console.error("Error fetching songs:", error);
+//         res.status(500).json({ error: "Internal server error" });
+//     }
+// });
+
 
 
 export default route
