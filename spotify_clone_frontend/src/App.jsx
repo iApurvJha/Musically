@@ -11,7 +11,7 @@ import Search from './RouteComponent/Search';
 import {BrowserRouter,Routes,Route,Navigate} from "react-router-dom"
 import { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
-import Modal from './Modal/Modal.jsx';
+import Library from './RouteComponent/Library';
 
 
 
@@ -41,6 +41,7 @@ function App() {
               <Route path='/uploadsongs' element={<UploadSongs isAuthenticated={isAuthenticated} />}/>
               <Route path ='/mymusic' element= {<Mymusic isAuthenticated={isAuthenticated} />} />
               <Route path ='/search' element= {<Search />} />
+              <Route path ='/library' element= {<Library />} />
               <Route path='*' element={<Navigate to="/" />}/>
               {/* <Route path='/signup' element={<Signup />}/> */}
             </Routes>

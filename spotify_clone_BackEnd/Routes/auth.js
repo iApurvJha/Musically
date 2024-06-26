@@ -19,7 +19,7 @@ route.post("/register",async (req,res)=>{
     }
     else{
         const hashedPassword=await bcrypt.hash(password,10)
-        console.log(hashedPassword)
+        // console.log(hashedPassword)
         let newUserData={email,password:hashedPassword,firstName,lastName,username}
         const newUser= await User.create(newUserData)
 

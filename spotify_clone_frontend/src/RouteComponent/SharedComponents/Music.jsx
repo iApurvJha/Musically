@@ -11,7 +11,7 @@ function Music(props) {
     <>
         <div className='myMusicWrapper' onClick={()=>{
             setCurrSong(props)
-            // console.log("Done")
+            
         }}>
                     
             <div className='songDetail ' >

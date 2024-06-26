@@ -5,13 +5,16 @@ import {Howl, Howler} from "howler"
 import { Icon } from '@iconify/react';
 import { useContext } from 'react';
 import songContext from '../Context/SongContext';
-function PlayMusic() {
+
+
+function PlayMusic({setPlaylistModal}) {
   const [songData,setSongData]=useState([])
   const [songPlayed,setSongPlayed]=useState(null)
   const [isPlaying,setIsPlaying]=useState(false)
   const {currSong,setCurrentSong}=useContext(songContext)
-  console.log("i am cursong")
-  console.log(currSong)
+  // console.log("i am cursong")
+  // console.log(`i am currsonId ${currSong._id}`)
+  // console.log(currSong)
 
   useEffect(()=>{
     if(!currSong){
@@ -19,6 +22,8 @@ function PlayMusic() {
     }
     changeSong(currSong.track)
   },[currSong])
+
+
 
   const playSound=()=>{
     if(!songPlayed){
@@ -79,7 +84,12 @@ function PlayMusic() {
         <Icon icon="mage:next-fill" width="1rem" height="1rem" />
         <Icon icon="ic:baseline-repeat" width="1rem" height="1rem" />
       </div>
-      <div className='controls'>controls</div>
+      <div className='controls' onClick={()=>{
+        setPlaylistModal(true)
+      }}>
+        
+        <Icon icon="ph:playlist-bold" width="1.5rem" height="1.5rem"  style={{color: 'white'}} />
+      </div>
     </div>
   ) : (
     ""

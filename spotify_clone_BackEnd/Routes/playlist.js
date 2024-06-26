@@ -17,6 +17,15 @@ route.post("/create",async (req,res)=>{
 
 
 })
+//get all playlist of the registered user
+route.get("/get/allmyplaylists",async(req,res)=>{
+    console.log(req.user._id)
+    const playlists = await playlistModel.find({owner:req.user._id})
+    // if(playlists.length===0){
+    //     return res.status(400).json({"error":"No playlist found"})
+    // }
+    return res.status(200).json(playlists)
+})
 //get a particular playlist by playlist id
 route.get("/get/:playlistId",async (req,res)=>{
     const playlistId = req.params.playlistId
@@ -50,21 +59,23 @@ route.get("/artist/playlists/:artistId",async (req,res)=>{
 //add a song to an existing playlist
 //we will recieve an songId and an playlistId form the user to perform this operation
 route.post("/add/song",async(req,res)=>{
+    console.log('add song ')
     const {playlistId,songId}=req.body
     const currUser = String(req.user._id)
     
     const playlist = await playlistModel.findOne({_id:playlistId})
     if(!playlistId){
-        res.status(401).json({"error":"No such playlist exist"})
+        return res.status(401).json({"error":"No such playlist exist"})
     }
-    if(currUser!=String(playlist.owner) && !playlist.collaborator.includes(currUser)){
-        res.status(401).json({"error":"Acess Denied"})
+    // if(currUser!=String(playlist.owner) && !playlist.collaborator.includes(currUser)){
+    //     return res.status(401).json({"error":"Acess Denied"})
         
-    }
+    // }
+
     const song = await songModel.findOne({_id:songId})
     
     if(!song){
-        res.status(401).json({"error":"No such song exist"})
+       return  res.status(401).json({"error":"No such song exist"})
     }
     playlist.track.push(songId)
     await playlist.save()

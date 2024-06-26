@@ -36,15 +36,17 @@ function SideBar(props) {
                     <p>Search</p>
                     </div>
                 </NavLink>
-                <div className='createPlaylist'>
-                    <Icon icon="fluent:library-28-regular" width="3rem" height="2rem"  style={{color: "white"}} />
-                    <p>Your Library</p>
-                </div>
+                <NavLink to="/library" className="removeLinkStyle">
+                    <div className='createPlaylist'>
+                        <Icon icon="fluent:library-28-regular" width="3rem" height="2rem"  style={{color: "white"}} />
+                        <p>Your Library</p>
+                    </div>
+                </NavLink>
                 {props.isAuthenticated?<div
                      className='createPlaylist'>
                     <Icon icon="tabler:music" width="3rem" height="2rem"  style={{color: "white"}} />
                     <p><NavLink className="removeLinkStyle" to="/mymusic">My music</NavLink></p>
-                </div>:"hell"}
+                </div>:""}
             </div>
                 
          {/* User playlist and like songs section     */}

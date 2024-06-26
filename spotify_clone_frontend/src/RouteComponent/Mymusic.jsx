@@ -12,14 +12,15 @@ function Mymusic() {
     const [songData,setSongData]=useState([])
     const [cookie,setCookie]= useCookies(["token"])
 
+        
+    
 
     useEffect((()=>{
         const getSong=async ()=>{
             const response = await unAuthenticatedGetRequest("/song/all-mySongs",cookie.token)
-            console.log(response.data)
-            console.log("hello")
+            // console.log(`i am sond id in the mymusic component ${response}`)
+            // console.log(response.data[0]._id)
             // console.log(typeof(response.data))
-            console.log(Array.isArray(response.data));
             setSongData(response.data)
             // console.log(`i am fetch data ${response.data}`)
 
@@ -35,7 +36,7 @@ function Mymusic() {
                     My Songs
                 </div>
                     {songData.map((item,ind)=>{
-                        return <Music key={ind} songName={item.songName} thumbnail={item.thumbnail} artistFName={item.artist.firstName} track={item.track} />
+                        return <Music key={ind} songName={item.songName} thumbnail={item.thumbnail} artistFName={item.artist.firstName} track={item.track} _id={item._id} />
                     })}
 
 
